@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\Image">
+      <UniqueIdentifier>{2d82ceea-156a-4ddb-a6c6-6dd5a4a5e844}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Gif">
+      <UniqueIdentifier>{e72ddcef-6db7-4624-9160-93b2d03d196e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\Image\Eevee">
+      <UniqueIdentifier>{24da7638-f47f-43d3-940e-d0b6b2e3aa46}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vector2D.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2D.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="physics.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="macros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Image\Eevee\Eevee Stop.png">
+      <Filter>Resource Files\Image\Eevee</Filter>
+    </Image>
+    <Image Include="Image\Eevee\Eevee Run.png">
+      <Filter>Resource Files\Image\Eevee</Filter>
+    </Image>
+    <Image Include="Image\Eevee\Eevee Run2.png">
+      <Filter>Resource Files\Image\Eevee</Filter>
+    </Image>
+    <Image Include="Image\Eevee\Eevee Run3.png">
+      <Filter>Resource Files\Image\Eevee</Filter>
+    </Image>
+    <Image Include="Image\Eevee\Eevee Run4.png">
+      <Filter>Resource Files\Image\Eevee</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
