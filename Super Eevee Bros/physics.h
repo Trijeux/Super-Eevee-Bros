@@ -11,6 +11,10 @@ struct Physics
 
 	void ticks(const sf::Time& deltaTime)
 	{
+		/*acceleration.y = gravityPower;
+
+		location += acceleration * deltaTime.asSeconds();*/
+		
 		acceleration.y = gravityPower;
 
 		speed += acceleration * deltaTime.asSeconds();

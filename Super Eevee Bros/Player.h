@@ -13,7 +13,7 @@ namespace sf
 class Player
 {
 private:
-	static constexpr float speed = 1.f;
+	static constexpr float speed = 5.f;
 	//vector2D location = vector2D(0, 0);
 	Physics physics;
 
@@ -22,11 +22,15 @@ private:
 
 	bool upEnd = true;
 
+	void jump();
+
 public:
+	
+
 	Player();
 	~Player();
 
-	void draw(sf::RenderWindow& window);
+	void draw(sf::RenderWindow& window, sf::RectangleShape &platforme);
 	void inputs();
 	void ticks(const sf::Time& deltaTime);
 

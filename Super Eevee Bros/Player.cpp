@@ -5,11 +5,11 @@
 #include <iostream>
 
 
+
 Player::Player()
 {
-	if (!texture.loadFromFile("Image/Eevee/Eevee Stop.png"))
+	if (!texture.loadFromFile("Image/Eevee/Eevee_Stop.png"))
 		return;
-
 	sprite = sf::Sprite(texture);
 }
 
@@ -17,17 +17,23 @@ Player::~Player()
 {
 }
 
-void Player::draw(sf::RenderWindow& window)
+void Player::draw(sf::RenderWindow& window, sf::RectangleShape &platforme)
 {
 	sprite.setScale(1.5f, 1.5f);
-	sprite.setPosition(physics.location.x, physics.location.y);
+	
+	if (sprite.getGlobalBounds().intersects(platforme.getGlobalBounds()))
+	{
+		sprite.setPosition(physics.location.x, physics.location.y);
+	}
+
+	window.draw(sprite);
 
 	std::cout << physics.location.x << " / " << physics.location.y << std::endl;
 
 	//sf::CircleShape shape(100.f);
 	//shape.setFillColor(sf::Color::Green);
 	//window.draw(shape);
-	window.draw(sprite);
+	
 }
 
 void Player::inputs()
@@ -43,14 +49,11 @@ void Player::inputs()
 		physics.location.x -= speed;
 	}
 
-
-
-
 	if (570 <= physics.location.y && upEnd)
 	{
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
 		{
-			physics.speed.y = -500;
+			jump();
 		}
 	}
 	else if (609 > physics.location.y)
@@ -64,6 +67,12 @@ void Player::inputs()
 
 
 }
+
+void Player::jump()
+{
+	physics.speed.y = -1000;
+}
+
 
 void Player::ticks(const sf::Time& deltaTime)
 {
