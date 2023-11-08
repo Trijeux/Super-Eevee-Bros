@@ -6,6 +6,9 @@
 int main()
 {
     sf::RectangleShape platforme(sf::Vector2f(500, 100));
+    std::vector<sf::RectangleShape> platformes;
+    platformes.push_back(platforme);
+
     platforme.setOrigin(platforme.getSize().x / 2, platforme.getSize().y / 2);
     platforme.setPosition(900, 800);
 
@@ -32,12 +35,12 @@ int main()
         }
 
         player.ticks(deltaTime);
-        player.inputs();
+        player.inputs(platformes);
 
         // draw
         window.clear();
         window.draw(platforme);
-        player.draw(window, platforme);
+        player.draw(window);
         window.display();
        
     }

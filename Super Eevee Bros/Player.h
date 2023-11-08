@@ -30,8 +30,8 @@ public:
 	Player();
 	~Player();
 
-	void draw(sf::RenderWindow& window, sf::RectangleShape &platforme);
-	void inputs();
+	void draw(sf::RenderWindow& window);
+	void inputs(std::vector<sf::RectangleShape>& platforme);
 	void ticks(const sf::Time& deltaTime);
 
 };

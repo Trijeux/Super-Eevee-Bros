@@ -17,15 +17,12 @@ Player::~Player()
 {
 }
 
-void Player::draw(sf::RenderWindow& window, sf::RectangleShape &platforme)
+void Player::draw(sf::RenderWindow& window)
 {
 	sprite.setScale(1.5f, 1.5f);
-	
-	if (sprite.getGlobalBounds().intersects(platforme.getGlobalBounds()))
-	{
-		sprite.setPosition(physics.location.x, physics.location.y);
-	}
 
+
+	sprite.setPosition(physics.location.x, physics.location.y);
 	window.draw(sprite);
 
 	std::cout << physics.location.x << " / " << physics.location.y << std::endl;
@@ -36,7 +33,7 @@ void Player::draw(sf::RenderWindow& window, sf::RectangleShape &platforme)
 	
 }
 
-void Player::inputs()
+void Player::inputs(std::vector<sf::RectangleShape>& platforme)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
@@ -65,6 +62,16 @@ void Player::inputs()
 		upEnd = true;
 	}
 
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
+	{
+		physics.location.y += speed;
+	}
+
+	if (sprite.getGlobalBounds().intersects(platforme.getGlobalBounds()))
+	{
+		//std::cout << "test" << std::endl;
+		physics.location.y = 455;
+	}
 
 }
 
