@@ -33,7 +33,7 @@ void Player::draw(sf::RenderWindow& window)
 	
 }
 
-void Player::inputs(std::vector<sf::RectangleShape>& platforme)
+void Player::inputs(std::vector<sf::RectangleShape>& platformes)
 {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
 	{
@@ -67,11 +67,17 @@ void Player::inputs(std::vector<sf::RectangleShape>& platforme)
 		physics.location.y += speed;
 	}
 
-	if (sprite.getGlobalBounds().intersects(platforme.getGlobalBounds()))
+	for (int i = 0; i < platformes.size(); i++)
 	{
-		//std::cout << "test" << std::endl;
-		physics.location.y = 455;
+		sf::RectangleShape platforme = platformes[i];
+		std::cout << "test" << std::endl;
+		float platformetailly = platforme.getPosition().y - 3 - (texture.getSize().y + platforme.getSize().y / 2);
+		if (sprite.getGlobalBounds().intersects(platforme.getGlobalBounds()))
+		{
+			physics.location.y = platformetailly;
+		}
 	}
+
 
 }
 
@@ -85,7 +91,7 @@ void Player::ticks(const sf::Time& deltaTime)
 {
 	physics.ticks(deltaTime);
 
-	constexpr float imageSizeY = 291;
+	constexpr float imageSizeY = 175;
 	constexpr float imageSizeXd = 270;
 	constexpr float imageSizeXg = 1830;
 	const float bordery = WINDOW_SIZE_Y - imageSizeY;

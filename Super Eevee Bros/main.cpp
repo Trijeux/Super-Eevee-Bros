@@ -5,13 +5,11 @@
 
 int main()
 {
-    sf::RectangleShape platforme(sf::Vector2f(500, 100));
     std::vector<sf::RectangleShape> platformes;
+    sf::RectangleShape platforme(sf::Vector2f(500, 100));
+    platforme.setOrigin(platforme.getSize().x / 2, 0);
+    platforme.setPosition(900, 455);
     platformes.push_back(platforme);
-
-    platforme.setOrigin(platforme.getSize().x / 2, platforme.getSize().y / 2);
-    platforme.setPosition(900, 800);
-
 
     sf::RenderWindow window(sf::VideoMode(WINDOW_SIZE_X, WINDOW_SIZE_Y), "SFML works!");
     sf::Clock clock;
